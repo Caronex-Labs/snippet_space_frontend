@@ -1,5 +1,6 @@
 <template>
   <v-card
+    tile
     class="mx-auto overflow-hidden"
   >
     <v-app-bar
