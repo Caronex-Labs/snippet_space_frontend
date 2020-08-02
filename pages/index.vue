@@ -2,7 +2,7 @@
   <v-container class="ma-0 pa-0" fluid>
     <!--   Landing Page 1  -->
     <v-row
-      height="100vh"
+      height="90vh"
       id="banner"
     >
 
@@ -73,7 +73,7 @@
 
     </v-row>
 
-    <v-row style="height: 95vh; background-color: #412B42" id="about-us">
+    <v-row style="height: 93vh; background-color: #412B42" id="about-us">
       <v-col style="height: fit-content">
         <v-img
           :src="require('assets/Landing/circle-logo.svg')"
