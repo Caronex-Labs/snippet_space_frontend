@@ -61,9 +61,11 @@ export default {
       themes: {
         light: {
           primary: '#FDCB2E',
-          accent: '#55CFB4',
-          secondary: '#412B42',
+          accent: '#35CE8D',
+          secondary: '#28536B',
           important: '#F00046',
+          bars: '#131B23',
+          base: '#FFFBFE',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

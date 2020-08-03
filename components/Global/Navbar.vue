@@ -7,7 +7,7 @@
       elevate-on-scroll
       fixed
       app
-      color="secondary"
+      color="bars"
     >
       <v-toolbar-title @click="$vuetify.goTo('#banner')">
         <v-img

@@ -3,7 +3,7 @@
     fixed
     app
     padless
-    color="secondary"
+    color="bars"
     class="d-flex align-center justify-center"
   >
     <span class="white--text">{{ new Date().getFullYear() }} - Caronex Labs</span>
