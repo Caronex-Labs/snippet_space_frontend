@@ -45,7 +45,7 @@
           <v-col class="d-flex flex-column align-center justify-center">
             <v-btn dark class="primary--text">
               Sign Up with Github
-              <v-icon color="white" right>
+              <v-icon right>
                 mdi-github
               </v-icon>
             </v-btn>
@@ -74,7 +74,7 @@
 
     </v-row>
 
-    <v-row style="height: 93vh; background-color: #28536B" id="about-us">
+    <v-row style="height: 93vh; background-color: #FFFBFE" id="about-us">
       <v-col style="height: fit-content">
         <v-img
           :src="require('assets/Landing/circle-logo.svg')"
@@ -86,20 +86,20 @@
       </v-col>
 
       <v-col class="d-flex flex-column align-center mb-10">
-        <span class="base--text text-center mb-7" style="font-size: 1.5rem; line-height: 2.25rem">We Collect Your Best Codes.</span>
+        <span class="secondary--text text-center mb-7" style="font-size: 1.5rem; line-height: 2.25rem">We Collect Your Best Codes.</span>
         <v-spacer></v-spacer>
-        <span class="primary--text text-center" style="font-size: 1.2rem; line-height: 2.25rem">By Syncing With Your Github Gists Automatically.</span>
+        <span class="accent--text text-center" style="font-size: 1.2rem; line-height: 2.25rem">By Syncing With Your Github Gists Automatically.</span>
         <v-spacer></v-spacer>
-        <span class="primary--text text-center" style="font-size: 1.2rem; line-height: 2.25rem">And Help You Organize, Tag and Manage Them.</span>
+        <span class="accent--text text-center" style="font-size: 1.2rem; line-height: 2.25rem">And Help You Organize, Tag and Manage Them.</span>
         <v-spacer></v-spacer>
       </v-col>
     </v-row>
 
-    <v-row style="height: 93vh; background-color: #35CE8D" id="contribute">
+    <v-row style="height: 93vh; background-color: #FFFBFE" id="contribute">
       <v-col class="d-flex flex-column justify-center align-center">
-        <span class="base--text text-center " style="font-size: 1.6rem; line-height: 2.25rem">This Project Is Completely Open Source.</span>
-        <span class="base--text text-center font-weight-light mt-10" style="font-size: 1.2rem; line-height: 2.25rem">Wish to contribute?</span>
-        <v-btn outlined>
+        <span class="secondary--text text-center " style="font-size: 1.6rem; line-height: 2.25rem">This Project Is Completely Open Source.</span>
+        <span class="secondary--text text-center font-weight-light mt-10" style="font-size: 1.2rem; line-height: 2.25rem">Wish to contribute?</span>
+        <v-btn class="primary--text" outlined>
           Open In Github
           <v-icon right>
             mdi-github
