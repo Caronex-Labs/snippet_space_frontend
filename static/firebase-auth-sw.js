@@ -6,7 +6,7 @@ importScripts(
 importScripts(
   'https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js'
 )
-firebase.initializeApp({"apiKey":undefined,"authDomain":undefined,"databaseURL":undefined,"projectId":undefined,"storageBucket":undefined,"messagingSenderId":undefined,"appId":undefined,"measurementId":undefined})
+firebase.initializeApp({"apiKey":"AIzaSyCWmJqwgnNtt5maOopp15A89xU5M3fm5l8","authDomain":"snippet-space.firebaseapp.com","databaseURL":"https:\u002F\u002Fsnippet-space.firebaseio.com","projectId":"snippet-space","storageBucket":"snippet-space.appspot.com","messagingSenderId":"311348168328","appId":"1:311348168328:web:7292b7c67970facacac13d","measurementId":"G-KFNF9848CE"})
 
 /**
  * Returns a promise that resolves with an ID token if available.
