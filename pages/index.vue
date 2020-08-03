@@ -57,16 +57,16 @@
 
         <v-row class="mt-10 my-5">
           <v-col class="d-flex align-center justify-center">
-              <v-avatar
-                tile
-                height="contain"
-                @click="$vuetify.goTo('#about-us')"
+            <v-avatar
+              tile
+              height="contain"
+              @click="$vuetify.goTo('#about-us')"
+            >
+              <v-img
+                :src="require('assets/Landing/scroll-prompt.svg')"
               >
-                <v-img
-                  :src="require('assets/Landing/scroll-prompt.svg')"
-                >
-                </v-img>
-              </v-avatar>
+              </v-img>
+            </v-avatar>
           </v-col>
         </v-row>
       </v-col>
@@ -98,7 +98,14 @@
     <v-row style="height: 93vh; background-color: #FFFBFE" id="contribute">
       <v-col class="d-flex flex-column justify-center align-center">
         <span class="secondary--text text-center " style="font-size: 1.6rem; line-height: 2.25rem">This Project Is Completely Open Source.</span>
-        <span class="secondary--text text-center font-weight-light mt-10" style="font-size: 1.2rem; line-height: 2.25rem">Wish to contribute?</span>
+        <v-avatar height="50vh" width="auto" tile>
+          <v-img
+            :src="require('assets/Landing/open-source.svg')"
+          >
+          </v-img>
+        </v-avatar>
+        <span class="secondary--text text-center font-weight-light mt-10"
+              style="font-size: 1.2rem; line-height: 2.25rem">Wish to contribute?</span>
         <v-btn class="primary--text" outlined>
           Open In Github
           <v-icon right>
