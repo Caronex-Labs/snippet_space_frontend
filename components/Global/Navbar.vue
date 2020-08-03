@@ -25,22 +25,30 @@
           <v-icon color="primary" left>mdi-home</v-icon>
           Home
         </v-btn>
+        <div style="height: 60%;">
         <v-divider class="mx-3" vertical inset color="white"></v-divider>
+        </div>
         <v-btn color="white" text exact @click="$vuetify.goTo('#about-us')">
           <v-icon color="accent" left>mdi-account-group</v-icon>
           About Us
         </v-btn>
+        <div style="height: 60%;">
         <v-divider class="mx-3" vertical inset color="white"></v-divider>
+        </div>
         <v-btn color="white" text exact @click="$vuetify.goTo('#contribute')">
           <v-icon color="red" left>mdi-heart</v-icon>
           Looking to Contribute?
         </v-btn>
-        <v-divider class="mx-3" vertical inset color="white"></v-divider>
+        <div style="height: 60%;">
+          <v-divider class="mx-3" vertical inset color="white"></v-divider>
+        </div>
         <v-btn color="white" text exact @click="oauthGithub">
           <v-icon left color="white">mdi-github</v-icon>
           Sign In With Github
         </v-btn>
+        <div style="height: 60%;">
         <v-divider class="mx-3" vertical inset color="white"></v-divider>
+        </div>
         <v-btn @click="$vuetify.theme.dark = !$vuetify.theme.dark" icon>
           <v-icon color="white">mdi-moon-waning-crescent</v-icon>
         </v-btn>
@@ -116,12 +124,17 @@ export default {
       theme: 'landing/getTheme'
     }),
     mode() {
-      switch(this.$vuetify.breakpoint.name) {
-        case "xs": return 'mobile';
-        case "sm": return 'mobile';
-        case "md": return 'desk';
-        case "lg": return 'desk';
-        case "xl": return 'desk';
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 'mobile';
+        case "sm":
+          return 'mobile';
+        case "md":
+          return 'desk';
+        case "lg":
+          return 'desk';
+        case "xl":
+          return 'desk';
       }
     }
   },
