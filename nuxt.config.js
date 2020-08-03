@@ -65,8 +65,12 @@ export default {
     },
     services: {
       auth: {
-        ssr: true
-      }
+        ssr: true,
+        initialize: {
+          onAuthStateChangedAction: 'onAuthStateChangedAction'
+        }
+      },
+      analytics: true
     }
   },
   pwa: {
