@@ -37,20 +37,35 @@
           active-class="secondary--text text--accent-4"
         >
           <v-list-item @click="$vuetify.goTo('#banner')">
-            <v-list-item-icon><v-icon color="primary">mdi-home</v-icon></v-list-item-icon>
+            <v-list-item-icon>
+              <v-icon color="primary">mdi-home</v-icon>
+            </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
           <v-list-item @click="$vuetify.goTo('#about-us')">
-            <v-list-item-icon><v-icon color="accent">mdi-account-group</v-icon></v-list-item-icon>
+            <v-list-item-icon>
+              <v-icon color="accent">mdi-account-group</v-icon>
+            </v-list-item-icon>
             <v-list-item-title>About Us</v-list-item-title>
           </v-list-item>
           <v-list-item @click="$vuetify.goTo('#contribute')">
-            <v-list-item-icon><v-icon color="red">mdi-heart</v-icon></v-list-item-icon>
+            <v-list-item-icon>
+              <v-icon color="red">mdi-heart</v-icon>
+            </v-list-item-icon>
             <v-list-item-title>Looking to Contribute?</v-list-item-title>
           </v-list-item>
           <v-list-item @click="oauthGithub">
-            <v-list-item-icon><v-icon color="black">mdi-github</v-icon></v-list-item-icon>
+            <v-list-item-icon>
+              <v-icon color="black">mdi-github</v-icon>
+            </v-list-item-icon>
             <v-list-item-title>Sign In With Github</v-list-item-title>
+          </v-list-item>
+          <v-spacer></v-spacer>
+          <v-list-item @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+            <v-list-item-icon>
+              <v-icon color="secondary">mdi-moon-waning-crescent</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Light Switch</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -60,6 +75,9 @@
 </template>
 
 <script>
+
+import {mapGetters, mapMutations} from 'vuex';
+
 export default {
   name: "Navbar",
   data() {
@@ -68,10 +86,15 @@ export default {
       group: null
     }
   },
+  computed: {
+    ...mapGetters({
+      theme: 'landing/getTheme'
+    })
+  },
   methods: {
     oauthGithub() {
       alert("Github Login")
-    }
+    },
   },
   watch: {
     group() {

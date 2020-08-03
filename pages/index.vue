@@ -4,13 +4,12 @@
     <v-row
       height="90vh"
       id="banner"
-      style="background-color: #FFFBFE"
-    >
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23'} : {backgroundColor: '#FFFBFE'}"    >
 
       <!--   Illustration   -->
       <v-col class="mx-0 px-0" style="height: fit-content" cols="12">
         <v-img
-          :src="require('assets/Landing/mobile-banner.svg')"
+          :src="$vuetify.theme.dark ? require('assets/Landing/mobile-banner-dark.svg') : require('assets/Landing/mobile-banner.svg')"
           width="100%"
           height="auto"
         >
@@ -74,7 +73,9 @@
 
     </v-row>
 
-    <v-row style="height: 93vh; background-color: #FFFBFE" id="about-us">
+    <v-row
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '93vh'} : {backgroundColor: '#FFFBFE', height: '93vh'}"
+      id="about-us">
       <v-col style="height: fit-content">
         <v-img
           :src="require('assets/Landing/circle-logo.svg')"
@@ -95,7 +96,8 @@
       </v-col>
     </v-row>
 
-    <v-row style="height: 93vh; background-color: #FFFBFE" id="contribute">
+    <v-row
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '93vh'} : {backgroundColor: '#FFFBFE', height: '93vh'}"      id="contribute">
       <v-col class="d-flex flex-column justify-center align-center">
         <span class="secondary--text text-center " style="font-size: 1.6rem; line-height: 2.25rem">This Project Is Completely Open Source.</span>
         <v-avatar height="50vh" width="auto" tile>
@@ -118,9 +120,17 @@
 </template>
 
 <script>
-
-
+import {mapGetters} from 'vuex';
 export default {
-  layout: 'landing'
+  layout: 'landing',
+  data() {
+    return {
+    }
+  },
+  computed: {
+    ...mapGetters({
+      theme: 'landing/getTheme'
+    })
+  }
 }
 </script>
