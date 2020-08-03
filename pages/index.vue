@@ -102,7 +102,7 @@
         <span class="secondary--text text-center " style="font-size: 1.6rem; line-height: 2.25rem">This Project Is Completely Open Source.</span>
         <v-avatar height="50vh" width="auto" tile>
           <v-img
-            :src="require('assets/Landing/open-source.svg')"
+            :src="$vuetify.theme.dark ? require('assets/Landing/open-source-dark.svg') : require('assets/Landing/open-source.svg')"
           >
           </v-img>
         </v-avatar>
