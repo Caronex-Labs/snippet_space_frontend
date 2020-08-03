@@ -51,11 +51,8 @@
             <template v-slot:activator="{ on, attrs }">
               <v-btn v-bind="attrs" v-on="on" color="white" text exact>
                 <v-icon left>mdi-account</v-icon>
-<<<<<<< HEAD
                 {{ $fireAuth.currentUser !== null ? $fireAuth.currentUser.displayName : "Loading..." }}
-=======
-                {{$fireAuth.currentUser !== null ? $fireAuth.currentUser.displayName : "Loading..." }}
->>>>>>> a64e1019d94a68129a61c7aa72621e23693f0ef5
+
               </v-btn>
             </template>
 
@@ -220,7 +217,12 @@ export default {
       provider.addScope('read:user');
       provider.addScope('gist');
       try {
-        let result = await this.$fireAuth.signInWithPopup(provider)
+        let result;
+        if (this.mode === 'mobile') {
+          result = await this.$fireAuth.signInWithRedirect(provider)
+        } else {
+          result = await this.$fireAuth.signInWithPopup(provider)
+        }
         let token = result.credential;
         let user = result.user;
         await this.$fireAuth.currentUser.reload()
