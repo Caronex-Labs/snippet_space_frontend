@@ -51,7 +51,11 @@
             <template v-slot:activator="{ on, attrs }">
               <v-btn v-bind="attrs" v-on="on" color="white" text exact>
                 <v-icon left>mdi-account</v-icon>
+<<<<<<< HEAD
                 {{ $fireAuth.currentUser !== null ? $fireAuth.currentUser.displayName : "Loading..." }}
+=======
+                {{$fireAuth.currentUser !== null ? $fireAuth.currentUser.displayName : "Loading..." }}
+>>>>>>> a64e1019d94a68129a61c7aa72621e23693f0ef5
               </v-btn>
             </template>
 
@@ -156,6 +160,7 @@
             </v-list-item>
           </v-list-group>
           <v-list-item v-else @click="loginUser">
+
             <v-list-item-icon>
               <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-github</v-icon>
             </v-list-item-icon>
