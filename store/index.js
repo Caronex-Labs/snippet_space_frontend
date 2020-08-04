@@ -40,7 +40,7 @@ export const actions = {
           public: gist.public,
         })
         for (let file in gist.files) {
-          db.collection('users').doc(this.$fireAuth.currentUser.uid).collection("gists").doc(gist.id).collection('files').add({
+          db.collection('users').doc(this.$fireAuth.currentUser.uid).collection("gists").doc(gist.id).collection('files').doc(gist.files[file].filename).set({
             filename: gist.files[file].filename,
             language: gist.files[file].language,
             framework: '',
