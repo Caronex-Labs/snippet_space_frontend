@@ -23,9 +23,11 @@ export const actions = {
     const { uid, email, displayName } = authUser
     await commit('user/setUserLoggedIn', true)
     await commit('user/setLogInProcessing', false)
+  },
 
-
-
+  async signUpGistsSync({commit}, token) {
+    this.$auth
+    console.log(gists)
   }
 
 }

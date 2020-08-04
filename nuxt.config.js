@@ -70,7 +70,8 @@ export default {
           onAuthStateChangedAction: 'onAuthStateChangedAction'
         }
       },
-      analytics: true
+      analytics: true,
+      firestore: true
     }
   },
   pwa: {

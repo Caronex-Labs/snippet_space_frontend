@@ -197,6 +197,8 @@ export default {
         let result = await this.$fireAuth.signInWithPopup(provider)
         let token = result.credential;
         let user = result.user;
+        await this.$store.dispatch('signUpGistsSync', token)
+        console.log(result)
       } catch (e) {
         let errorCode = e.code;
         let errorMessage = e.message;
