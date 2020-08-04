@@ -106,9 +106,13 @@
     >
         <v-btn class="px-0">
 
-          <v-avatar  class="d-flex align-center justify-center">
+          <v-avatar v-if="$fireAuth.currentUser !== null"  class="d-flex align-center justify-center">
             <v-img contain class="fill-width align-self-center" :src="$fireAuth.currentUser.photoURL"></v-img>
           </v-avatar>
+
+          <template v-else>
+            Loading ...
+          </template>
 
         </v-btn>
         <v-divider vertical></v-divider>
