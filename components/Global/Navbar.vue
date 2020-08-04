@@ -194,7 +194,8 @@ export default {
   computed: {
     ...mapGetters({
       theme: 'landing/getTheme',
-      userLoggedIn: 'user/getUserLoggedIn'
+      userLoggedIn: 'user/getUserLoggedIn',
+      logInProcessing: 'user/getLogInProcessing'
     }),
     mode() {
       switch (this.$vuetify.breakpoint.name) {
@@ -218,14 +219,10 @@ export default {
       provider.addScope('gist');
       try {
         let result;
-        if (this.mode === 'mobile') {
-          result = await this.$fireAuth.signInWithRedirect(provider)
-        } else {
-          result = await this.$fireAuth.signInWithPopup(provider)
-        }
+        await this.$store.commit('user/setLogInProcessing', true)
+        result = await this.$fireAuth.signInWithPopup(provider)
         let token = result.credential;
         let user = result.user;
-        await this.$fireAuth.currentUser.reload()
       } catch (e) {
         let errorCode = e.code;
         let errorMessage = e.message;
@@ -241,7 +238,7 @@ export default {
     },
     async userLogout() {
       await this.$fireAuth.signOut();
-    }
+    },
   },
   watch: {
     group() {

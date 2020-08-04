@@ -15,12 +15,15 @@ export const actions = {
     if (!authUser) {
       console.log("logging out")
       await commit('user/setUserLoggedIn', false)
+      await commit('user/setLogInProcessing', false)
       return
     }
 
     // you can request additional fields if they are optional (e.g. photoURL)
     const { uid, email, displayName } = authUser
-    commit('user/setUserLoggedIn', true)
+    await commit('user/setUserLoggedIn', true)
+    await commit('user/setLogInProcessing', false)
+
 
 
   }

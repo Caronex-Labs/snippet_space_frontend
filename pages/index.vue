@@ -1,9 +1,19 @@
 <template>
   <v-container class="ma-0 pa-0" fluid>
+
     <!--   Landing Page 1  -->
     <v-row
       id="banner"
       :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '92.5vh'} : {backgroundColor: '#FFFBFE', height: '92.5vh'}">
+
+      <v-skeleton-loader
+        v-if="logInProcessing"
+        class="mx-auto"
+        max-width="300"
+        type="card"
+      >
+
+      </v-skeleton-loader>
 
       <!--   Illustration   -->
       <v-col v-if="mode === 'mobile'" class="mx-0 px-0" style="height: fit-content" cols="12">
@@ -158,7 +168,8 @@ export default {
   computed: {
     ...mapGetters({
       theme: 'landing/getTheme',
-      userLoggedIn: 'user/getUserLoggedIn'
+      userLoggedIn: 'user/getUserLoggedIn',
+      logInProcessing: 'user/getLogInProcessing'
     }),
     mode() {
       switch (this.$vuetify.breakpoint.name) {

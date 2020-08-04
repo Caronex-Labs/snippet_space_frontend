@@ -81,7 +81,7 @@ export default {
       importScripts: [
         'firebase-auth-sw.js'
       ],
-      dev: true
+      dev: process.env.WORKBOX_DEV
     }
   },
 
