@@ -223,6 +223,8 @@ export default {
         result = await this.$fireAuth.signInWithPopup(provider)
         let token = result.credential;
         let user = result.user;
+        await this.$fireAuth.currentUser.reload()
+        console.log(user)
       } catch (e) {
         let errorCode = e.code;
         let errorMessage = e.message;

@@ -1,109 +1,109 @@
 <template>
-  <v-container class="ma-0 pa-0" fluid>
+  <v-skeleton-loader
+    v-if="logInProcessing"
+    class="mx-auto my-16"
+    max-width="80%"
+    type="card, card"
+  >
+
+  </v-skeleton-loader>
+  <v-container v-else class="ma-0 pa-0" fluid>
 
     <!--   Landing Page 1  -->
+
     <v-row
       id="banner"
       :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '92.5vh'} : {backgroundColor: '#FFFBFE', height: '92.5vh'}">
 
-      <v-skeleton-loader
-        v-if="logInProcessing"
-        class="mx-auto"
-        max-width="300"
-        type="card"
-      >
 
-      </v-skeleton-loader>
+        <!--   Illustration   -->
+        <v-col v-if="mode === 'mobile'" class="mx-0 px-0" style="height: fit-content" cols="12">
+          <v-img
+            :src="$vuetify.theme.dark ? require('assets/Landing/mobile-banner-dark.svg') : require('assets/Landing/mobile-banner.svg')"
+            width="100%"
+            height="auto"
+          >
+          </v-img>
+        </v-col>
 
-      <!--   Illustration   -->
-      <v-col v-if="mode === 'mobile'" class="mx-0 px-0" style="height: fit-content" cols="12">
-        <v-img
-          :src="$vuetify.theme.dark ? require('assets/Landing/mobile-banner-dark.svg') : require('assets/Landing/mobile-banner.svg')"
-          width="100%"
-          height="auto"
-        >
-        </v-img>
-      </v-col>
-
-      <v-col v-else class="mx-0 px-0 d-flex align-end justify-center" cols="7">
-        <v-img
-          :src="$vuetify.theme.dark ? require('assets/Landing/desk-banner-dark.svg') : require('assets/Landing/desk-banner.svg')"
-          width="100%"
-          height="auto"
-        >
-        </v-img>
-      </v-col>
+        <v-col v-else class="mx-0 px-0 d-flex align-end justify-center" cols="7">
+          <v-img
+            :src="$vuetify.theme.dark ? require('assets/Landing/desk-banner-dark.svg') : require('assets/Landing/desk-banner.svg')"
+            width="100%"
+            height="auto"
+          >
+          </v-img>
+        </v-col>
 
 
-      <v-col :cols="mode === 'mobile' ? 12 : 5" class="align-self-center">
+        <v-col :cols="mode === 'mobile' ? 12 : 5" class="align-self-center">
 
-        <!-- Quote Text  -->
+          <!-- Quote Text  -->
 
-        <v-row>
-          <v-col>
-            <p class="font-weight-bold font-italic text-center"
-               :style="$vuetify.breakpoint.name === 'xs' ? 'font-size: 1.5rem; line-height: 2.438rem' : 'font-size: 2.25rem; line-height: 2.6rem' ">
-              <span class="accent--text">"</span>
-              <span
-                class="secondary--text">Good programmers write code. <br>Great ones try not to.</span>
-              <span class="accent--text">"</span>
-            </p>
-          </v-col>
-        </v-row>
+          <v-row>
+            <v-col>
+              <p class="font-weight-bold font-italic text-center"
+                 :style="$vuetify.breakpoint.name === 'xs' ? 'font-size: 1.5rem; line-height: 2.438rem' : 'font-size: 2.25rem; line-height: 2.6rem' ">
+                <span class="accent--text">"</span>
+                <span
+                  class="secondary--text">Good programmers write code. <br>Great ones try not to.</span>
+                <span class="accent--text">"</span>
+              </p>
+            </v-col>
+          </v-row>
 
-        <!--   Call to action   -->
+          <!--   Call to action   -->
 
-        <v-row>
-          <v-col class="d-flex align-center justify-center">
+          <v-row>
+            <v-col class="d-flex align-center justify-center">
             <span class="secondary--text font-italic font-weight-light"
                   :style="$vuetify.breakpoint.name === 'xs' ? 'font-size: 1.5rem; line-height: 2.25rem' : 'font-size: 1.7rem; line-height: 2.25rem' ">And we're here to help.</span>
-          </v-col>
-        </v-row>
+            </v-col>
+          </v-row>
 
-        <v-row v-if="userLoggedIn" class="my-6">
-          <v-col class="d-flex flex-column align-center justify-center">
-            <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" dark class="primary--text" @click="$router.push('/dashboard')">
-              Go To Dashboard
-              <v-icon right>
-                mdi-view-dashboard-outline
-              </v-icon>
-            </v-btn>
-            <span class="secondary--text text-overline">Free. Forever.</span>
-          </v-col>
-        </v-row>
+          <v-row v-if="userLoggedIn" class="my-6">
+            <v-col class="d-flex flex-column align-center justify-center">
+              <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" dark class="primary--text"
+                     @click="$router.push('/dashboard')">
+                Go To Dashboard
+                <v-icon right>
+                  mdi-view-dashboard-outline
+                </v-icon>
+              </v-btn>
+              <span class="secondary--text text-overline">Free. Forever.</span>
+            </v-col>
+          </v-row>
 
-        <v-row v-else class="my-6">
-          <v-col class="d-flex flex-column align-center justify-center">
-            <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" dark class="primary--text" @click="createUser">
-              Sign Up with Github
-              <v-icon right>
-                mdi-github
-              </v-icon>
-            </v-btn>
-            <span class="secondary--text text-overline">Free. Forever.</span>
-          </v-col>
-        </v-row>
+          <v-row v-else class="my-6">
+            <v-col class="d-flex flex-column align-center justify-center">
+              <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" dark class="primary--text" @click="createUser">
+                Sign Up with Github
+                <v-icon right>
+                  mdi-github
+                </v-icon>
+              </v-btn>
+              <span class="secondary--text text-overline">Free. Forever.</span>
+            </v-col>
+          </v-row>
 
-        <!--   Scroll prompt   -->
+          <!--   Scroll prompt   -->
 
-        <v-row class="mt-10 my-5">
-          <v-col class="d-flex align-center justify-center">
-            <v-avatar
-              tile
-              height="contain"
-              @click="$vuetify.goTo('#about-us')"
-              style="cursor: pointer"
-            >
-              <v-img
-                :src="require('assets/Landing/scroll-prompt.svg')"
+          <v-row class="mt-10 my-5">
+            <v-col class="d-flex align-center justify-center">
+              <v-avatar
+                tile
+                height="contain"
+                @click="$vuetify.goTo('#about-us')"
+                style="cursor: pointer"
               >
-              </v-img>
-            </v-avatar>
-          </v-col>
-        </v-row>
-      </v-col>
-
-
+                <v-img
+                  :src="require('assets/Landing/scroll-prompt.svg')"
+                >
+                </v-img>
+              </v-avatar>
+            </v-col>
+          </v-row>
+        </v-col>
     </v-row>
 
     <v-row
@@ -153,7 +153,9 @@
           </v-icon>
         </v-btn>
       </v-col>
+
     </v-row>
+
   </v-container>
 </template>
 
@@ -194,9 +196,7 @@ export default {
       try {
         let result = await this.$fireAuth.signInWithPopup(provider)
         let token = result.credential;
-        console.log(token)
         let user = result.user;
-        console.log(user)
       } catch (e) {
         let errorCode = e.code;
         let errorMessage = e.message;

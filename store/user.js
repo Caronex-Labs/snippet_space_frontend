@@ -17,6 +17,6 @@ export const mutations = {
     state.userLoggedIn = val;
   },
   setLogInProcessing(state, val) {
-    state.userLoggedIn = val;
+    state.logInProcessing = val;
   }
 }
