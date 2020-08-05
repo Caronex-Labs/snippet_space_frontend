@@ -7,7 +7,10 @@
 
       <v-col cols="9" v-else>
         <v-container>
-          <v-card>
+          <v-card
+            class="overflow-y-auto"
+            max-height="93vh"
+          >
             <v-card-title>
               {{ selectedGist.title }}
             </v-card-title>

@@ -195,17 +195,14 @@
             <v-tab-item key="frameworks">
               No Frameworks Yet
             </v-tab-item>
-            <v-tab-item style="height: 100%" key="search">
-              <v-card>
-                <v-virtual-scroll
-                  :items="gists"
-                  :item-height="150"
-                  height="800"
-                  key="search"
-                >
-                  <template v-slot="{item}">
-
+            <v-tab-item key="search">
+              <v-card
+                class="overflow-y-auto"
+                max-height="84vh"
+              >
                     <v-list-item
+                      v-for="item in gists"
+                      :key="item.id"
                       three-line
                       ripple
                       hover
@@ -223,8 +220,6 @@
                       </v-list-item-content>
                     </v-list-item>
                     <v-divider></v-divider>
-                  </template>
-                </v-virtual-scroll>
               </v-card>
             </v-tab-item>
           </v-tabs-items>
