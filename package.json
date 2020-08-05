@@ -18,7 +18,7 @@
     "firebase": "^7.17.1",
     "firebase-admin": "^9.0.0",
     "nuxt": "^2.0.0",
-    "vue-embed-gist": "^1.0.2"
+    "postscribe": "^2.0.8"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"
