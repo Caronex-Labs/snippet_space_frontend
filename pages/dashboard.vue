@@ -19,12 +19,15 @@
                 <v-chip v-for="lang in selectedGist.languages" :key="lang">{{ lang }}</v-chip>
               </v-chip-group>
               <v-divider></v-divider>
-<!--              <template v-for="file in selectedGist.files">-->
-<!--                {{file.filename}}-->
-<!--                <script :src="file.raw_url"></script>-->
-<!--                <v-divider inset></v-divider>-->
-<!--              </template>-->
-              <embed :src="selectedGist.html_url + '.js'"></embed>
+                            <template v-for="file in selectedGist.files">
+                              {{file.filename}}
+                              <VueEmbedGist
+                                :gist-id="selectedGist.id"
+                                :file="file.filename"
+                              />
+                              <v-divider inset></v-divider>
+                            </template>
+
             </v-card-text>
           </v-card>
         </v-container>
@@ -38,10 +41,11 @@
 <script>
 import Sidebar from "@/components/Global/Sidebar";
 import EmptyDisplay from "@/components/Dashboard/EmptyDisplay";
+import VueEmbedGist from 'vue-embed-gist'
 
 export default {
   name: "dashboard",
-  components: {EmptyDisplay, Sidebar},
+  components: {EmptyDisplay, Sidebar, VueEmbedGist},
   data() {
     return {
       selectedGist: null
@@ -56,5 +60,5 @@ export default {
 </script>
 
 <style scoped>
-
+@import url("https://github.githubassets.com/assets/gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css");
 </style>
