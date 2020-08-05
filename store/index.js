@@ -33,13 +33,26 @@ export const actions = {
       let gists = response.data;
       console.log(gists)
       gists.forEach(gist => {
-
+        console.log(gist)
         db.collection('users').doc(this.$fireAuth.currentUser.uid).collection("gists").doc(gist.id).set({
-          title: "",
+          title: gist.id,
           description: gist.description,
           public: gist.public,
+          html_url: gist.html_url
         })
+        let gist_files = []
+        let gist_languages = []
         for (let file in gist.files) {
+          gist_files.push({
+            filename: gist.files[file].filename,
+            language: gist.files[file].language,
+            framework: '',
+            raw_url: gist.files[file].raw_url
+          })
+          if (!gist_languages.includes(gist.files[file].language))
+          {
+            gist_languages.push(gist.files[file].language)
+          }
           db.collection('users').doc(this.$fireAuth.currentUser.uid).collection("gists").doc(gist.id).collection('files').doc(gist.files[file].filename).set({
             filename: gist.files[file].filename,
             language: gist.files[file].language,
@@ -47,6 +60,15 @@ export const actions = {
             raw_url: gist.files[file].raw_url
           })
         }
+        commit('gists/addGist', {
+          id: gist.id,
+          title: "",
+          description: gist.description,
+          public: gist.public,
+          html_url: gist.html_url,
+          languages: gist_languages,
+          files: gist_files
+        })
 
       })
     } catch (e) {
