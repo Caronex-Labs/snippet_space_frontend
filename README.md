@@ -1,4 +1,4 @@
-# snippet_space
+# SnippetSpace
 
 > A platform for developers to organize and manage their Github Gists.
 
