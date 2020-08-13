@@ -19,4 +19,8 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Roadmap
+
+* Ability to copy Gists
+* Ability to add new Gists
+* Ability to edit Gists
