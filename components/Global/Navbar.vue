@@ -85,7 +85,8 @@
           <v-divider class="mx-3" vertical inset color="white"></v-divider>
         </div>
         <v-btn @click="$vuetify.theme.dark = !$vuetify.theme.dark" icon>
-          <v-icon color="white">mdi-moon-waning-crescent</v-icon>
+          <v-icon v-if="!$vuetify.theme.dark" color="white">mdi-moon-waning-crescent</v-icon>
+          <v-icon v-else color="white">mdi-weather-sunny</v-icon>
         </v-btn>
       </template>
     </v-app-bar>
@@ -166,7 +167,8 @@
           <v-spacer></v-spacer>
           <v-list-item @click="$vuetify.theme.dark = !$vuetify.theme.dark">
             <v-list-item-icon>
-              <v-icon color="secondary">mdi-moon-waning-crescent</v-icon>
+              <v-icon v-if="!$vuetify.theme.dark" color="white">mdi-moon-waning-crescent</v-icon>
+              <v-icon v-else color="white">mdi-weather-sunny</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Light Switch</v-list-item-title>
           </v-list-item>
