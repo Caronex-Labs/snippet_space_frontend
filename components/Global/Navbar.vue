@@ -9,7 +9,7 @@
       app
       color="bars"
     >
-      <v-toolbar-title @click="$vuetify.goTo('#banner')">
+      <v-toolbar-title style="cursor: pointer" @click="$vuetify.goTo('#banner')">
         <v-img
           :src="require('assets/Global/logo.svg')"
           height="35"
