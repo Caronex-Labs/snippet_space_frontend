@@ -13,7 +13,7 @@
 
     <v-row
       id="banner"
-      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '92.5vh'} : {backgroundColor: '#FFFBFE', height: '92.5vh'}">
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '100vh'} : {backgroundColor: '#FFFBFE', height: '100vh'}">
 
 
         <!--   Illustration   -->
@@ -107,7 +107,7 @@
     </v-row>
 
     <v-row
-      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '93vh'} : {backgroundColor: '#FFFBFE', height: '93vh'}"
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '100vh'} : {backgroundColor: '#FFFBFE', height: '100vh'}"
       id="about-us">
       <v-col style="height: fit-content" :cols="mode === 'mobile' ? 12 : 5" class="d-flex align-center justify-center">
         <v-img
@@ -133,7 +133,7 @@
     </v-row>
 
     <v-row
-      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '93vh'} : {backgroundColor: '#FFFBFE', height: '93vh'}"
+      :style="$vuetify.theme.dark ? {backgroundColor: '#131B23', height: '100vh'} : {backgroundColor: '#FFFBFE', height: '100vh'}"
       id="contribute">
       <v-col class="d-flex flex-column justify-center align-center">
         <span class="secondary--text text-center "
