@@ -146,7 +146,7 @@
         </v-avatar>
         <span class="secondary--text text-center font-weight-light mt-10"
               :style="$vuetify.breakpoint.name === 'xs' ? 'font-size: 1.2rem; line-height: 2.25rem' : 'font-size: 1.8rem; line-height: 2.25rem' ">Wish to contribute?</span>
-        <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" class="primary--text mt-5" outlined>
+        <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" class="primary--text mt-5" outlined @click="openInGithub">
           <v-icon left>
             mdi-github
           </v-icon>
@@ -210,6 +210,9 @@ export default {
           console.error(e);
         }
       }
+    },
+    openInGithub(){
+      window.open('https://github.com/Caronex-Labs/snippet_space_frontend')
     }
   }
 }
