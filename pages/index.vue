@@ -77,10 +77,10 @@
           <v-row v-else class="my-6">
             <v-col class="d-flex flex-column align-center justify-center">
               <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" dark class="primary--text" @click="createUser">
-                Sign Up with Github
-                <v-icon right>
+                <v-icon left>
                   mdi-github
                 </v-icon>
+                Sign Up with Github
               </v-btn>
               <span class="secondary--text text-overline">Free. Forever.</span>
             </v-col>
@@ -147,10 +147,10 @@
         <span class="secondary--text text-center font-weight-light mt-10"
               :style="$vuetify.breakpoint.name === 'xs' ? 'font-size: 1.2rem; line-height: 2.25rem' : 'font-size: 1.8rem; line-height: 2.25rem' ">Wish to contribute?</span>
         <v-btn :x-large="$vuetify.breakpoint.name !== 'xs'" class="primary--text mt-5" outlined>
-          Open In Github
-          <v-icon right>
+          <v-icon left>
             mdi-github
           </v-icon>
+          Open In Github
         </v-btn>
       </v-col>
 
